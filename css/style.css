@@ -10,13 +10,13 @@ nav {
 }
 a{
     text-decoration: none;
-    color:white;
-    padding:0.5em;
+    color:rgb(0, 32, 36);
+    padding:0.6em;
     font-size:1.3em;
 }
 a:hover{
-    background-color:white;
-    color:rgb(0, 32, 36);
+    background-color:rgb(0, 32, 36);
+    color:white;
     border-radius: 5%;
     transition: 0.5s ;
 
@@ -29,17 +29,21 @@ ul{
 li{
     list-style: none;
 }
-.container {
-    height:100vh;
-    margin: auto;
+
+header{
+    position: relative;
     background-image: url('../pier-407252.jpg');
     background-size: cover;
     background-position: center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
     opacity: 0.9;
-    width:95%;
+    height:100vh;
+}
+.container {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:rgb(0, 32, 36);
 }
 h1,
 h2{
