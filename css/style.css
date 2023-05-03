@@ -329,7 +329,7 @@ p {
 }
 
 .skills_card {
-  width: calc(100%*1/3);
+  width: calc(100%*1/5);
 }
 
 hr {
@@ -337,6 +337,33 @@ hr {
   border-top:none;
   border-bottom: solid 1px var(--darkGreen);
   width:70%;
+}
+
+.rubrique_btn {
+  justify-self: flex-end;
+}
+
+.pblms {
+  max-height:0px;
+  width:100%;
+  background-color: rgba(15, 12, 12, 0.1);;
+  /* transition: max-height 0.8s ease-out; */
+  overflow: hidden;
+}
+
+.extended {
+  height:auto;
+  max-height:1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding:2em;
+  /* transition: max-height 1s ease-in; */
+}
+.top_rubrique {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Page Avis */
@@ -519,4 +546,3 @@ hr {
   text-decoration: none;
   border-radius: 10px;
 }
-
