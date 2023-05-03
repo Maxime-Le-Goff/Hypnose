@@ -129,6 +129,18 @@ p {
 .paragraph_light {
   color:var(--mainColor);
   font-size: 1.2em;
+  width: 80%;
+  margin:auto;
+  letter-spacing: 0.1em;
+  line-height: 40px;
+}
+
+.paragraph_dark {
+  color:var(--darkGreen);
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  line-height: 40px;
+  font-size: 1.1em;
 }
 
 .value {
@@ -340,13 +352,18 @@ hr {
 }
 
 .rubrique_btn {
-  justify-self: flex-end;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+.rubrique_btn:hover{
+  transform: scale(1.8, 1.8) ;
+  transition: 0.2s ease-in;
 }
 
 .pblms {
   max-height:0px;
   width:100%;
-  background-color: rgba(15, 12, 12, 0.1);;
   /* transition: max-height 0.8s ease-out; */
   overflow: hidden;
 }
@@ -358,7 +375,7 @@ hr {
   flex-wrap: wrap;
   justify-content: center;
   padding:2em;
-  /* transition: max-height 1s ease-in; */
+  transition: max-height 1s ease-in;
 }
 .top_rubrique {
   display:flex;
@@ -429,7 +446,6 @@ hr {
 
 .text_align_center {
   text-align:center;
-  font-size: 1.3em;
 }
 
 /* New Avis */
@@ -466,7 +482,7 @@ hr {
 .btn_form{
   width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: rgb(117, 197, 206);
+	background-color: var(--darkGreen);
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -478,7 +494,7 @@ hr {
 
 .btn_form:hover
 {
-    background-color: var(--darkGreen);
+    background-color: black;
 }
 
 .field:focus
