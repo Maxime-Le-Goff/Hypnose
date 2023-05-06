@@ -5,9 +5,9 @@
     --brand-color: hsl(46, 100%, 50%);
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
-    --darkGreen: rgb(10, 77, 83);
-    /* --darkGreen:#303952; */
-    --mainColor: #E8E1CF;
+     /* --mainColor: hsl(51deg 100% 50%); */
+     --mainColor: white;
+    --blueBack:hsl(210deg 83% 26%); 
     /* Fonts */
     --font-title: "Montserrat", sans-serif;
     --font-text: "Lato", sans-serif;
@@ -19,15 +19,17 @@
   box-sizing: border-box;
 }
 
-
 body{
-    margin:0;
-    padding:0; 
-    text-align:center;
-    background-color: var(--mainColor);
-    color:var(--darkGreen);
-    font-family:  var(--font-text), serif;
-    font-size:1.1em;
+  margin:0;
+  padding:0; 
+  text-align:center;
+  background: hsla(202, 80%, 41%, 1);
+  background: radial-gradient(circle, hsla(202, 80%, 41%, 1) 19%, hsla(220,83%, 19%, 1) 100%);
+  background: -moz-radial-gradient(circle, hsla(202, 80%, 41%, 1) 19%, hsl(220, 83%, 19%, 1) 100%);
+  background: -webkit-radial-gradient(circle, hsla(202, 80%, 41%, 1) 19%, hsl(220, 83%, 19%, 1) 100%);
+  color:var(--mainColor);
+  font-family:  var(--font-text), serif;
+  font-size:1.1em;
 }
 
 nav {
@@ -37,7 +39,7 @@ nav {
 .main_nav {
   position:relative;
     text-decoration: none;
-    color:var(--darkGreen);
+    color:var(--mainColor);
     font-size:1.1em;
     margin:1em ;
 }
@@ -45,7 +47,7 @@ nav {
 .main_nav:after {
   content:"";
   position:absolute;
-  background-color:var(--darkGreen);
+  background-color:var(--mainColor);
   height:2px;
   width:0;
   left:0;
@@ -54,7 +56,7 @@ nav {
 }
 
 .main_nav:hover{
-    color:var(--darkGreen);
+    color:var(--mainColor);
 }
 
 .main_nav:hover:after{
@@ -71,21 +73,23 @@ li{
 
 .home_header{
     position: relative;
-    background-image: url('../pier-407252.jpg');
+    /* background-image: url('../Logo\ final.jpg'); */
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     height:100vh;
+}
+
+.logo {
+  width:900px;
+  /* height:1000px; */
 }
 
 footer {
     margin: 5em 0 4em 0;
 }
 
-img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-}
+
 
 p {
     text-align:justify;
@@ -96,19 +100,7 @@ p {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    color:var(--darkGreen);
-}
-
-.main_home {
-  background-color:var(--darkGreen);
-}
-
-.title_home h1 {
-    font-size : 3em;
-}
-
-.title_home h2 {
-    font-size: 2em;
+    color:var(--mainColor);
 }
 
 .container {
@@ -119,24 +111,14 @@ p {
   padding:3em 0 5em 0;
 }
 
-.title_light {
+.title {
   color: var(--mainColor);
   font-family: var(--font-title);
-  font-size: 2.5em;
-  padding-top:2.5em;
-}
-
-.paragraph_light {
-  color:var(--mainColor);
-  font-size: 1.2em;
-  width: 80%;
-  margin:auto;
-  letter-spacing: 0.1em;
-  line-height: 40px;
+  font-size: 2em;
 }
 
 .paragraph_dark {
-  color:var(--darkGreen);
+  color: white;
   font-size: 1em;
   letter-spacing: 0.1em;
   line-height: 40px;
@@ -153,17 +135,17 @@ p {
 
 .value h4 {
     font-size : 1.3em;
-    color:var(--darkGreen);
+    color:var(--mainColor);
 }
 
 .value p {
-    color:var(--darkGreen);
+    color:var(--mainColor);
 }
 
 .values_title {
     margin:4em 0 2em 0;
     font-size: 1.8em;
-    color: var(--mainColor);
+    color: var(--blueBack);
     font-family: var(--font-title);
 }
 
@@ -336,10 +318,6 @@ p {
     flex-wrap: wrap;
 }
 
-.title {
-  font-family: var(--font-title);
-}
-
 .skills_card {
   width: calc(100%*1/5);
 }
@@ -347,7 +325,7 @@ p {
 hr {
   margin-top:2em;
   border-top:none;
-  border-bottom: solid 1px var(--darkGreen);
+  border-bottom: solid 1px var(--mainColor);
   width:70%;
 }
 
@@ -396,7 +374,7 @@ hr {
   font-size:1em;
   position:relative;
   margin: 2em auto;
-  color: var(--darkGreen);
+  color: var(--mainColor);
   width:10em;
   display:flex;
   justify-content: center;
@@ -406,7 +384,7 @@ hr {
 }
 
 .btn::after, .btn::before {
-  border:2px solid var(--darkGreen);
+  border:2px solid var(--mainColor);
   content: "";
   position:absolute;
   width:calc(100% -  6px);
@@ -436,11 +414,11 @@ hr {
 }
 
 .one_avis {
-  background-color: var(--darkGreen);
+  background-color: white;
   margin: 1em;
   padding:1em 2em;
   border-radius: 10px;
-  color: var(--mainColor);
+  color: var(--blueBack);
   width: 40%;
 }
 
@@ -482,7 +460,7 @@ hr {
 .btn_form{
   width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: var(--darkGreen);
+	background-color: var(--mainColor);
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -499,7 +477,7 @@ hr {
 
 .field:focus
 {
-    border: 2px solid var(--darkGreen);
+    border: 2px solid var(--mainColor);
     background-color: #fff;
 }
 
@@ -555,10 +533,20 @@ hr {
 }
 
 .text {
-  background-color: var(--darkGreen);
+  background-color: var(--mainColor);
   color: white;
   font-size: 16px;
   padding:1em;
   text-decoration: none;
   border-radius: 10px;
+}
+
+
+@media(min-width:1000px){
+  .home_header{
+    background-position: center;
+    background-size: 100%;;
+    /* background-repeat: no-repeat; */
+    height:100vh;
+}
 }
