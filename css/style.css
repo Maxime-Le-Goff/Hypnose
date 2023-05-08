@@ -86,6 +86,14 @@ li{
     height:100vh;
 }
 
+.hamburger {
+  display:none;
+}
+
+.active {
+  color: var(--titleColor);
+}
+
 .logo {
   width:900px;
 }
@@ -125,6 +133,10 @@ p {
 
 }
 
+.fa-chevron-down {
+  padding-left:  10px;
+}
+
 .margin_title {
   margin: 1em 0 3em 0;
 }
@@ -133,7 +145,7 @@ p {
   left:0;
   opacity:0;
   position:absolute;
-  top:50px;
+  top:40px;
   visibility: hidden;
   z-index:1;
   display:flex;
@@ -392,7 +404,7 @@ hr {
   font-size:1em;
   position:relative;
   margin: 2em auto;
-  color: var(--mainColor);
+  color: var(--titleColor);
   width:10em;
   display:flex;
   justify-content: center;
@@ -402,7 +414,7 @@ hr {
 }
 
 .btn::after, .btn::before {
-  border:2px solid var(--mainColor);
+  border:2px solid var(--titleColor);
   content: "";
   position:absolute;
   width:calc(100% -  6px);
@@ -442,6 +454,11 @@ hr {
 
 .text_align_center {
   text-align:center;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--titleColor);
 }
 
 /* New Avis */
@@ -563,11 +580,111 @@ hr {
   border-radius: 10px;
 }
 
+/* Responsive */
+@media only screen and (max-width:1500px){
 
-@media(min-width:1000px){
-  .home_header{
-    background-position: center;
-    background-size: 100%;;
-    height:100vh;
+  .card {
+    width:50%;
+    margin-bottom:2em;
+  }
+
+  .values {
+    flex-wrap: wrap;
+  }
 }
+
+@media only screen and (max-width:1050px){
+
+  .card {
+    width:100%;
+    margin-bottom:2em;
+  }
+
+  .values {
+    flex-direction:column;
+  }
+
+  .list_avis {
+    justify-content: center;
+    padding:0;
+  }
+
+  .one_avis {
+    width:100%;
+  }
+}
+@media only screen and (max-width:900px){
+
+
+hr {
+  display:none;
+}
+.main_nav::after {
+  display:none;
+}
+
+.main_nav::before {
+  display:none;
+}
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position:fixed;
+    top:30PX;
+    right:50px;
+  }
+
+  .nav-bar {
+    height:0;
+    width:100vw;
+    transition:0.2s;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .nav-bar > ul {
+    display:block;
+    width: fit-content;
+    margin:10px auto 0 auto;
+    text-align:center;
+    transition:0.5s;
+    opacity:1;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+  }
+
+  .nav-bar li {
+    padding:1em;
+  }
+
+  .extend {
+    height:370px;
+    opacity:1;
+    background-color: #0B0B45;
+  }
+
+  .dropdown {
+    top:0;
+    left:190px;
+  }
+
+  .dropdown li {
+    padding:0;
+  }
+
+  .dropdown a {
+    padding:1em;
+    background-color: hsla(202, 80%, 41%, 1);
+  }
+
+.title_home {
+  z-index: -1;
+}
+
+  .logo {
+   width: 600px;
+  }
+
 }

@@ -6,16 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophrologie et P.N.L</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d63125858.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <header>
-        <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars fa-xl"></i>
+        </div>
+        <nav class="nav-bar">
             <ul>
-                <li><a class="main_nav" href="index.html">Accueil</a></li>
-                <li><a class="main_nav" href="compétences.html">Compétences</a></li>
+                <li><a class="main_nav active" href="index.html">Accueil</a></li>
+                <li><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="one_skill.html">Gestion des Emotions</a></li>
+                    <li><a href="one_skill.html">Traverser une étape de vie</a></li>
+                    <li><a href="one_skill.html">Affirmation de soi</a></li>
+                </ul></li>
                 <li><a class="main_nav" href="tarifs.html">Tarifs</a></li>
                 <li><a class="main_nav" href="avis.html">Avis</a></li>
                 <li><a class="main_nav" href="rdv.html">Rendez-vous</a></li>
@@ -25,7 +38,7 @@
     <hr>
     <main>
         <div class="container">
-            <h2 class="title up_font paragraph_dark">Ecriture de votre avis</h2>
+            <h2 class="title">Ecriture de votre avis</h2>
             <p class="text_align_center paragraph_dark">Il vous suffit d'écrire dans l'encadré ci-dessous et d'appuyer sur envoyer une fois finie</p>
             <form action="POST">
                 <textarea name="textarea" class="field" id="textarea" rows="15" placeholder="Votre Avis"></textarea>
