@@ -5,11 +5,11 @@
     --brand-color: hsl(46, 100%, 50%);
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
-     /* --mainColor: hsl(51deg 100% 50%); */
+    --titleColor: hsl(51deg 100% 50%);
      --mainColor: white;
     --blueBack:hsl(210deg 83% 26%); 
     /* Fonts */
-    --font-title: "Montserrat", sans-serif;
+    --font-title:'Dancing Script', cursive;;
     --font-text: "Lato", sans-serif;
   }
 
@@ -38,16 +38,22 @@ nav {
 
 .main_nav {
   position:relative;
-    text-decoration: none;
-    color:var(--mainColor);
-    font-size:1.1em;
-    margin:1em ;
+  text-decoration: none;
+  color:var(--mainColor);
+  font-size:1.1em;
+  margin:1em ;
+}
+
+nav li {
+  float: left;
+  position:relative;
+  width:auto;
 }
 
 .main_nav:after {
   content:"";
   position:absolute;
-  background-color:var(--mainColor);
+  background-color:var(--titleColor);
   height:2px;
   width:0;
   left:0;
@@ -56,7 +62,7 @@ nav {
 }
 
 .main_nav:hover{
-    color:var(--mainColor);
+    color:var(--titleColor);
 }
 
 .main_nav:hover:after{
@@ -82,14 +88,11 @@ li{
 
 .logo {
   width:900px;
-  /* height:1000px; */
 }
 
 footer {
     margin: 5em 0 4em 0;
 }
-
-
 
 p {
     text-align:justify;
@@ -100,7 +103,7 @@ p {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    color:var(--mainColor);
+    color:var(--titleColor);
 }
 
 .container {
@@ -112,10 +115,57 @@ p {
 }
 
 .title {
-  color: var(--mainColor);
+  color: var(--titleColor);
   font-family: var(--font-title);
-  font-size: 2em;
+  font-size: 2.5em;
 }
+
+.margin{
+  margin: 3em 0;
+
+}
+
+.margin_title {
+  margin: 1em 0 3em 0;
+}
+
+.dropdown {
+  left:0;
+  opacity:0;
+  position:absolute;
+  top:50px;
+  visibility: hidden;
+  z-index:1;
+  display:flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.dropdown a {
+  text-decoration:none;
+  color: #fff;
+  padding:1em;
+  background: hsla(202, 80%, 41%, 1);
+  display: block;
+  text-align:center;
+  transition: all 0.25s ease;
+}
+
+.dropdown li:hover a {
+  background: #0B0B45;
+  color: var(--titleColor);
+}
+
+li:hover .dropdown {
+  opacity:1;
+  visibility: visible;
+}
+
+.dropdown li {
+  float: none;
+  width:100%;
+}
+
 
 .paragraph_dark {
   color: white;
@@ -145,7 +195,7 @@ p {
 .values_title {
     margin:4em 0 2em 0;
     font-size: 1.8em;
-    color: var(--blueBack);
+    color: var(--titleColor);
     font-family: var(--font-title);
 }
 
@@ -171,7 +221,7 @@ p {
 .card h2 {
   font-size: 2em;
   font-family: var(--font-title);
-  color: var(--white);
+  color: var(--mainColor);
   line-height: 1.1;
 }
 
@@ -329,38 +379,6 @@ hr {
   width:70%;
 }
 
-.rubrique_btn {
-  transition: 0.2s ease-out;
-  cursor: pointer;
-}
-
-.rubrique_btn:hover{
-  transform: scale(1.8, 1.8) ;
-  transition: 0.2s ease-in;
-}
-
-.pblms {
-  max-height:0px;
-  width:100%;
-  /* transition: max-height 0.8s ease-out; */
-  overflow: hidden;
-}
-
-.extended {
-  height:auto;
-  max-height:1500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding:2em;
-  transition: max-height 1s ease-in;
-}
-.top_rubrique {
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 /* Page Avis */
 .list_avis {
   display:flex;
@@ -460,8 +478,8 @@ hr {
 .btn_form{
   width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: var(--mainColor);
-	color: #fff;
+	background-color: var(--blueBack);
+	color: var(--mainColor);
 	font-size: 1.1rem;
 	border: none;
 	outline: none;
@@ -472,12 +490,12 @@ hr {
 
 .btn_form:hover
 {
-    background-color: black;
+  color: var(--titleColor);
 }
 
 .field:focus
 {
-    border: 2px solid var(--mainColor);
+    border: 2px solid var(--titleColor);
     background-color: #fff;
 }
 
@@ -503,7 +521,11 @@ hr {
 }
 
 .list_style_on{
-  list-style-type: circle;
+  list-style-type: disc;
+}
+
+.padding {
+  padding: 1em;
 }
 
 .img_medoucine {
@@ -546,7 +568,6 @@ hr {
   .home_header{
     background-position: center;
     background-size: 100%;;
-    /* background-repeat: no-repeat; */
     height:100vh;
 }
 }
