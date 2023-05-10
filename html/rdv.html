@@ -6,17 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophrologie et P.N.L</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d63125858.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <header>
-        <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars fa-xl"></i>
+        </div>
+        <nav class="nav-bar">
             <ul>
-                <li><a class="main_nav" href="index.html">Accueil</a></li>
-                <li><a class="main_nav" href="compétences.html">Compétences</a></li>
+                <li><a class="main_nav active" href="index.html">Accueil</a></li>
+                <li><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="one_skill.html">Gestion des Emotions</a></li>
+                    <li><a href="one_skill.html">Traverser une étape de vie</a></li>
+                    <li><a href="one_skill.html">Affirmation de soi</a></li>
+                </ul></li>
                 <li><a class="main_nav" href="tarifs.html">Tarifs</a></li>
                 <li><a class="main_nav" href="avis.html">Avis</a></li>
                 <li><a class="main_nav" href="rdv.html">Rendez-vous</a></li>
@@ -53,10 +65,8 @@
                 </div>
                 <div class="medoucine">
                     <h3 class="title">Par Medoucine</h3>
-                    <img src="../Picto-medoucine.png" alt="Medoucine" class="img_medoucine">
-                    <div class="middle">
-                        <a class="text" href="https://www.medoucine.com" target="_blank">Prendre rendez-vous sur Medoucine</a>
-                    </div>
+                    <p class="paragraph_dark">Pour prendre rendez-vous via medoucine, il vous suffit de cliquer sur l'image ci-dessous :</p>
+                    <a class="text" href="https://www.medoucine.com" target="_blank"><img src="../Picto-medoucine.png" alt="Medoucine" class="img_medoucine"></a>                        
                 </div>
             </div>
         </div>  
