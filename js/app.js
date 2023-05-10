@@ -1,13 +1,16 @@
+// Burger Menu deployed on click
 const hamburger = document.querySelector('.hamburger');
-hamburger.addEventListener('click', handleClick); 
-
-function handleClick(event)  
-{
-    console.log(event.target);
+hamburger.addEventListener('click', (event) => {
     const navBar = document.querySelector('.nav-bar');
-    if(navBar.classList.contains('extend')){
-        navBar.classList.remove('extend');
-    } else {
-        navBar.classList.add('extend');
-    }
+    navBar.classList.toggle('extend');
 }
+); 
+
+
+//Dropdown Menu on click 
+const li = document.querySelector('#dropdown_li');
+console.log(li);
+li.addEventListener('click', (event) => {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('drop_active');
+} )

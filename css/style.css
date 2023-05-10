@@ -32,8 +32,8 @@ body{
   font-size:1.1em;
 }
 
-nav {
-    padding:0.5em;
+.nav-bar {
+  padding:0.5em;
 }
 
 .main_nav {
@@ -69,9 +69,18 @@ nav li {
     width:100%;
   }
 
+.fa-user {
+  position:absolute;
+  top:auto;
+  right:50px;
+  z-index: -1;
+}
+
 ul{
     display:flex;
     justify-content: center;
+    align-items: center;
+    padding-left:0;
 }
 li{
     list-style: none;
@@ -85,6 +94,7 @@ li{
     background-repeat: no-repeat;
     height:100vh;
 }
+
 
 .hamburger {
   display:none;
@@ -168,7 +178,7 @@ p {
   color: var(--titleColor);
 }
 
-li:hover .dropdown {
+.drop_active {
   opacity:1;
   visibility: visible;
 }
@@ -528,9 +538,11 @@ hr {
 .medoucine {
   width:50%;
   position:relative;
-
+  padding: 0 1.5em;
 }
-
+.medoucine p {
+  margin-bottom: 1em;
+}
 .column_list{
   display:flex;
   flex-direction: column;
@@ -550,34 +562,6 @@ hr {
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.medoucine:hover .img_medoucine {
-  opacity:0.3;
-}
-
-.medoucine:hover .middle {
-  opacity:1;
-}
-
-.text {
-  background-color: var(--mainColor);
-  color: white;
-  font-size: 16px;
-  padding:1em;
-  text-decoration: none;
-  border-radius: 10px;
 }
 
 /* Responsive */
@@ -615,7 +599,6 @@ hr {
 }
 @media only screen and (max-width:900px){
 
-
 hr {
   display:none;
 }
@@ -629,9 +612,9 @@ hr {
   .hamburger {
     display: block;
     cursor: pointer;
-    position:fixed;
-    top:30PX;
-    right:50px;
+    position:absolute;
+    top:30px;
+    left:50px;
   }
 
   .nav-bar {
@@ -663,6 +646,7 @@ hr {
     height:370px;
     opacity:1;
     background-color: #0B0B45;
+    display: block;
   }
 
   .dropdown {
@@ -679,12 +663,54 @@ hr {
     background-color: hsla(202, 80%, 41%, 1);
   }
 
-.title_home {
-  z-index: -1;
-}
+  .title_home {
+    z-index: -1;
+  }
 
   .logo {
    width: 600px;
   }
 
+  .fa-user {
+    top:30px;
+  }
+
+  .rdv {
+    display:block;
+  }
+
+  .medoucine {
+    width:100%;
+    margin-top: 5em;
+  }
+
+  .contact_form {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width:600px){
+
+  .logo {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width:450px){
+
+  .container {
+    width:85%;
+  }
+  .logo {
+    width: 320px;
+  }
+
+  .dropdown {
+    top:50px;
+    left:0;
+  }
+
+  .list_style_on {
+    list-style-type: square;
+  }
 }
