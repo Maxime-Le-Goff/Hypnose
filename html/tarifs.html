@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophrologie et P.N.L</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d63125858.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
     <header>
-        <nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars fa-xl"></i>
+        </div>
+        <nav class="nav-bar">
             <ul>
-                <li><a class="main_nav" href="index.html">Accueil</a></li>
-                <li><a class="main_nav" href="compétences.html">Compétences</a></li>
+                <li><a class="main_nav active" href="index.html">Accueil</a></li>
+                <li><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="one_skill.html">Gestion des Emotions</a></li>
+                    <li><a href="one_skill.html">Traverser une étape de vie</a></li>
+                    <li><a href="one_skill.html">Affirmation de soi</a></li>
+                </ul></li>
                 <li><a class="main_nav" href="tarifs.html">Tarifs</a></li>
                 <li><a class="main_nav" href="avis.html">Avis</a></li>
                 <li><a class="main_nav" href="rdv.html">Rendez-vous</a></li>
@@ -28,12 +39,16 @@
     <main>
         <div class="container">
             <h2 class="title margin_title">Tarifs</h2>
-            <p class="paragraph_dark"><b>Tarif classique </b>: Le tarif pour une séance s'élève à 70 euros.</p>
+            <p class="paragraph_dark"><b>Tarif classique </b>: Le tarif pour une séance s'élève à <span class="price">70 euros</span>.</p>
             <br>
-            <p class="paragraph_dark"> <b>Forfait 5 séances </b>:Il existe aussi un forfait pour 5 séances au prix de 300 euros, soit une remise de 50 euros.</p>
+            <p class="paragraph_dark"><b>Tarif étudiant </b>:Pour les étudiants, le prix de la séance s'élève à <span class="price">60 euros</span>, soit une remise de 10 euros.</p>
+            <br>
+            <p class="paragraph_dark">
+            <b>Forfait 5 séances </b>:Il existe aussi un forfait pour 5 séances au prix de <span class="price">300 euros</span>, soit une remise de 50 euros.</p>
+
             <p class="paragraph_dark">Si vous souhaitez bénéficier du forfait, merci de me le préciser lors de la prise du premier rendez-vous.</p>
             <br>
-            <p class="paragraph_dark"><b>Tarif étudiant </b>:Pour les étudiants, le prix de la séance s'élève à 60 euros, soit une remise de 10 euros.</p>
+            
         </div>
     </main>
     <hr>
