@@ -61,6 +61,14 @@ nav li {
   transition:0.5s;
 }
 
+/* .edit {
+  cursor:pointer;
+}
+
+.edit:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
 .main_nav:hover{
     color:var(--titleColor);
 }
@@ -70,10 +78,10 @@ nav li {
   }
 
 .fa-user {
-  position:absolute;
+  /* position:absolute;
   top:auto;
   right:50px;
-  z-index: -1;
+  z-index: -1; */
 }
 
 ul{
@@ -88,7 +96,6 @@ li{
 
 .home_header{
     position: relative;
-    /* background-image: url('../Logo\ final.jpg'); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
