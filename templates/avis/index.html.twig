@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main>
+        <div class="container">
+            <h2 class="title up_font edit">{{data[0].avis_title}}</h2>
+            <p class="text_align_center paragraph_dark edit">{{data[0].avis_text}}</p>
+            {% if app.user %}
+            <a href="{{path('app_new_avis')}}" class="btn" >Donner votre avis</a>
+            {% else %}
+            <a href="{{path('app_login')}}" class="btn" >Donner votre avis</a>
+            {% endif %}
+            <ul class="list_avis">
+            {% for avis in allAvis %}
+                <li class="one_avis">
+                    <p>{{avis.message}}</p>
+                    <h5 class="info_avis">Avis de {{avis.user.prenom}} {{avis.user.nom|first}}, posté le {{ avis.date|date("d/m/Y") }}</h5>
+                </li>
+            {% endfor %}
+            </ul>
+            
+        </div>
+            
+    </main>
+
+{% endblock %}

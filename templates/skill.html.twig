@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<main>
+        <div class="container">
+            <h2 class="title margin_title edit">{{categorie.name}}</h2>
+            <p class="paragraph_dark margin_title edit">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam impedit amet tempore quo explicabo optio, delectus aliquid fuga deleniti illo tempora. Rem pariatur atque, cum tempora odio aut cumque dolores repellat, accusantium officiis placeat itaque odit perspiciatis? Fuga reprehenderit cupiditate ratione exercitationem velit quae vitae impedit rem, blanditiis illo rerum.</p>
+            <ul class="column_list">
+            {% for skill in skills %}
+                <li class="list_style_on padding edit">{{skill.name}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock %}

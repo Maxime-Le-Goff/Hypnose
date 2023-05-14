@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-        <script src="../js/app.js" defer></script>
+        <script src="{{asset('assets/js/app.js')}}" defer></script>
+        {% if app.user %}
+        {% if 'ROLE_ADMIN' in app.user.roles %}
+        <script src="{{asset('assets/js/edit.js')}}" defer></script>
+        {% endif %}
+        {% endif %}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -21,18 +26,23 @@
             </div>
             <nav class="nav-bar">
                 <ul>
-                    <li><a class="main_nav active" href="index.html">Accueil</a></li>
-                    <li id="dropdown_li"><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="one_skill.html">Gestion des Emotions</a></li>
-                        <li><a href="one_skill.html">Traverser une étape de vie</a></li>
-                        <li><a href="one_skill.html">Affirmation de soi</a></li>
-                    </ul></li>
-                    <li><a class="main_nav" href="tarifs.html">Tarifs</a></li>
-                    <li><a class="main_nav" href="avis.html">Avis</a></li>
-                    <li><a class="main_nav" href="rdv.html">Rendez-vous</a></li>
-                    <i class="fa-solid fa-user"></i>
-                </ul>
+                <li><a class="main_nav active" href="{{path('app_home')}}">Accueil</a></li>
+                <li id="dropdown_li"><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                {% for categorie in categories %}
+                    <li><a href="{{path('app_skill', {id : categorie.id})}}">{{categorie.name}}</a></li>
+                {% endfor %}
+                </ul></li>
+                <li><a class="main_nav" href="{{path('app_tarifs')}}">Tarifs</a></li>
+                <li><a class="main_nav" href="{{path('app_avis')}}">Avis</a></li>
+                <li><a class="main_nav" href="{{path('app_rdv')}}">Rendez-vous</a></li>
+                {% if app.user %}
+                <li><a class="main_nav" href="{{path('app_logout')}}">Se déconnecter</a></li>
+                {% else %}
+                 <li><a class="main_nav" href="{{path('app_login')}}">Se connecter</a></li>
+                {% endif %}
+
+            </ul>
             </nav>
         </header>
 {% block body %}
@@ -42,10 +52,10 @@
         </div>
         <hr>
         <div class="container">
-            <h2 class="title dark margin">Présentation</h2>
-            <p class="paragraph_dark">Pouvoir se tourner vers autrui afin de le guider dans la découverte de ses trésors enfouis sous la garde de son inconscient est une récompense : résiliences, transformations, joies, petits pas et grands changements deviennent vos victoires. Il me suffit de voir votre sourire, entendre votre soulagement pour ressentir cette émotion, à nulle autre pareille, du travail accompli sous mes yeux. Il y a du merveilleux dans l’être humain.</p>
+            <h2 class="title dark margin edit">{{data[0].home_pres}}</h2>
+            <p class="paragraph_dark edit">{{data[0].text_pres}}</p>
             
-            <h3 class ="title dark margin" >Valeurs</h3>
+            <h3 class ="title dark margin edit" >{{data[0].home_values}}</h3>
             <div class="values">
                 <article class="card">
                     <img
