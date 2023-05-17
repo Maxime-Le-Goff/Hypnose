@@ -20,17 +20,17 @@ class DataText
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $home_pres;
+    private $homePres;
 
     /**
      * @ORM\Column(type="string", length=800)
      */
-    private $text_pres;
+    private $textPres;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $home_values;
+    private $homeValues;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -38,7 +38,7 @@ class DataText
     private $tarifs_title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1500)
      */
     private $tarifs_text1;
 
@@ -60,80 +60,81 @@ class DataText
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $avis_title;
+    private $avisTitle;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $avis_text;
+    private $avisText;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $new_avis_title;
+    private $newAvisTitle;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $new_avis_text;
+    private $newAvisText;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $rdv_title;
+    private $rdvTitle;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $rdv_text1;
+    private $rdvTextUn;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $rdv_text2;
+    private $rdvTextDeux;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $rdv_text3;
+    private $rdvTextTrois;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getHome_pres(): ?string
+    public function getHomePres(): ?string
     {
-        return $this->home_pres;
+        return $this->homePres;
     }
 
-    public function setHome_pres(string $home_pres): self
+    public function setHomePres(string $homePres): self
     {
-        $this->home_pres = $home_pres;
+        $this->homePres = $homePres;
 
         return $this;
     }
 
-    public function getText_pres(): ?string
+    public function getTextPres(): ?string
     {
-        return $this->text_pres;
+        return $this->textPres;
     }
 
-    public function setText_pres(string $text_pres): self
+    public function setTextPres(string $textPres): self
     {
-        $this->text_pres = $text_pres;
+        $this->textPres = $textPres;
 
         return $this;
     }
 
-    public function getHome_values(): ?string
+    public function getHomeValues(): ?string
     {
-        return $this->home_values;
+        return $this->homeValues;
     }
 
-    public function setHome_values(string $home_values): self
+    public function setHomeValues(string $homeValues): self
     {
-        $this->home_values = $home_values;
+        $this->homeValues = $homeValues;
 
         return $this;
     }
@@ -198,98 +199,98 @@ class DataText
         return $this;
     }
 
-    public function getAvis_title(): ?string
+    public function getAvisTitle(): ?string
     {
-        return $this->avis_title;
+        return $this->avisTitle;
     }
 
-    public function setAvis_title(string $avis_title): self
+    public function setAvisTitle(string $avisTitle): self
     {
-        $this->avis_title = $avis_title;
+        $this->avisTitle = $avisTitle;
 
         return $this;
     }
 
-    public function getAvis_text(): ?string
+    public function getAvisText(): ?string
     {
-        return $this->avis_text;
+        return $this->avisText;
     }
 
-    public function setAvis_text(string $avis_text): self
+    public function setAvisText(string $avisText): self
     {
-        $this->avis_text = $avis_text;
+        $this->avisText = $avisText;
 
         return $this;
     }
 
-    public function getNew_avis_Title(): ?string
+    public function getNewAvisTitle(): ?string
     {
-        return $this->new_avis_title;
+        return $this->newAvisTitle;
     }
 
-    public function setNew_avis_title(string $new_avis_title): self
+    public function setNewAvisTitle(string $newAvisTitle): self
     {
-        $this->new_avis_title = $new_avis_title;
+        $this->newAvisTitle = $newAvisTitle;
 
         return $this;
     }
 
-    public function getNew_avis_text(): ?string
+    public function getNewAvisText(): ?string
     {
-        return $this->new_avis_text;
+        return $this->newAvisText;
     }
 
-    public function setNew_avis_text(string $new_avis_text): self
+    public function setNewAvisText(string $newAvisText): self
     {
-        $this->new_avis_text = $new_avis_text;
+        $this->newAvisText = $newAvisText;
 
         return $this;
     }
 
-    public function getRdv_title(): ?string
+    public function getRdvTitle(): ?string
     {
-        return $this->rdv_title;
+        return $this->rdvTitle;
     }
 
-    public function setRdv_title(string $rdv_title): self
+    public function setRdvTitle(string $rdvTitle): self
     {
-        $this->rdv_title = $rdv_title;
+        $this->rdvTitle = $rdvTitle;
 
         return $this;
     }
 
-    public function getRdv_text1(): ?string
+    public function getRdvTextUn(): ?string
     {
-        return $this->rdv_text1;
+        return $this->rdvTextUn;
     }
 
-    public function setRdv_text1(string $rdv_text1): self
+    public function setRdvTextUn(string $rdvTextUn): self
     {
-        $this->rdv_text1 = $rdv_text1;
+        $this->rdvTextUn = $rdvTextUn;
 
         return $this;
     }
 
-    public function getRdv_text2(): ?string
+    public function getRdvTextDeux(): ?string
     {
-        return $this->rdv_text2;
+        return $this->rdvTextDeux;
     }
 
-    public function setRdv_text2(string $rdv_text2): self
+    public function setRdvTextDeux(?string $rdvTextDeux): self
     {
-        $this->rdv_text2 = $rdv_text2;
+        $this->rdvTextDeux = $rdvTextDeux;
 
         return $this;
     }
 
-    public function getRdv_text3(): ?string
+    public function getRdvTextTrois(): ?string
     {
-        return $this->rdv_text3;
+        return $this->rdvTextTrois;
     }
 
-    public function setRdv_text3(string $rdv_text3): self
+    public function setRdvTextTrois(?string $rdvTextTrois): self
     {
-        $this->rdv_text3 = $rdv_text3;
+        $this->rdvTextTrois = $rdvTextTrois;
 
         return $this;
     }

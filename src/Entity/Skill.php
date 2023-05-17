@@ -27,6 +27,7 @@ class Skill
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
+    
 
     public function getId(): ?int
     {

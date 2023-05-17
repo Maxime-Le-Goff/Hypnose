@@ -14,8 +14,6 @@ class UserController extends AbstractController
     
     public function createUser(UserPasswordHasherInterface $PasswordHasher)
     {
-        $user = new User();
-        $user->setEmail('newemail@gmail.com');
-        $user->setpassword($PasswordHasher('mdp'));
+
     }
 }
