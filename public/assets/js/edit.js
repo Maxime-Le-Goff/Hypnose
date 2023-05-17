@@ -37,7 +37,6 @@ for(let x = 0; x < edit.length; x++){
                 
                 textarea.textContent = '';
             },
-            true
             );
             
         } else {
