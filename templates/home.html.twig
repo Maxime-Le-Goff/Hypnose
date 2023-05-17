@@ -6,11 +6,11 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <script src="{{asset('assets/js/app.js')}}" defer></script>
-        {% if app.user %}
+        {# {% if app.user %}
         {% if 'ROLE_ADMIN' in app.user.roles %}
         <script src="{{asset('assets/js/edit.js')}}" defer></script>
         {% endif %}
-        {% endif %}
+        {% endif %} #}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -52,10 +52,10 @@
         </div>
         <hr>
         <div class="container">
-            <h2 class="title dark margin edit">{{data[0].home_pres}}</h2>
-            <p class="paragraph_dark edit">{{data[0].text_pres}}</p>
+            <h2 class="title dark margin edit">{{data[0].homePres}}</h2>
+            <p class="paragraph_dark edit">{{data[0].textPres}}</p>
             
-            <h3 class ="title dark margin edit" >{{data[0].home_values}}</h3>
+            <h3 class ="title dark margin edit" >{{data[0].homeValues}}</h3>
             <div class="values">
                 <article class="card">
                     <img

@@ -23,11 +23,6 @@ class Avis
     private $message;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $user_id;
-
-    /**
      * @ORM\OneToOne(targetEntity=User::class, inversedBy="avis", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -37,6 +32,12 @@ class Avis
      * @ORM\Column(type="date")
      */
     private $date;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isValid;
+
 
     public function getId(): ?int
     {
@@ -55,17 +56,6 @@ class Avis
         return $this;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(int $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {
@@ -87,6 +77,18 @@ class Avis
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function isIsValid(): ?bool
+    {
+        return $this->isValid;
+    }
+
+    public function setIsValid(bool $isValid): self
+    {
+        $this->isValid = $isValid;
 
         return $this;
     }
