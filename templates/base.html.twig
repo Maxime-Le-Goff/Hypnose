@@ -21,20 +21,21 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a class="main_nav active" href="{{path('app_home')}}">Accueil</a></li>
+            {% set currentPath = path(app.request.attributes.get('_route')) %}
+                <li><a class="main_nav" {% if currentPath == '/accueil'  %} id="active"{% endif %} href="{{path('app_home')}}">Accueil</a></li>
                 <li id="dropdown_li"><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown">
                 {% for categorie in categories %}
                     <li><a href="{{path('app_skill', {id : categorie.id})}}">{{categorie.name}}</a></li>
                 {% endfor %}
                 </ul></li>
-                <li><a class="main_nav" href="{{path('app_tarifs')}}">Tarifs</a></li>
-                <li><a class="main_nav" href="{{path('app_avis')}}">Avis</a></li>
-                <li><a class="main_nav" href="{{path('app_rdv')}}">Rendez-vous</a></li>
+                <li><a class="main_nav" {% if currentPath == '/tarifs'  %} id="active"{% endif %} href="{{path('app_tarifs')}}">Tarifs</a></li>
+                <li><a class="main_nav" {% if currentPath == '/avis'  %} id="active"{% endif %} href="{{path('app_avis')}}">Avis</a></li>
+                <li><a class="main_nav" {% if currentPath == '/rdv'  %} id="active"{% endif %} href="{{path('app_rdv')}}">Rendez-vous</a></li>
                 {% if app.user %}
-                <li><a class="main_nav" href="{{path('app_logout')}}">Déconnexion</a></li>
+                <li><a class="main_nav"{% if currentPath == '/logout'  %} id="active"{% endif %} href="{{path('app_logout')}}">Déconnexion</a></li>
                 {% else %}
-                 <li><a class="main_nav" href="{{path('app_login')}}">Connexion</a></li>
+                 <li><a class="main_nav"{% if currentPath == '/login'  %} id="active"{% endif %} href="{{path('app_login')}}">Connexion</a></li>
                 {% endif %}
             </ul>
         </nav>
