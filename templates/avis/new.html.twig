@@ -3,8 +3,11 @@
 {% block body %}
  <main>
         <div class="container">
-            <h2 class="title edit">{{data[0].new_avis_title}}</h2>
-            <p class="text_align_center paragraph_dark edit">{{data[0].new_avis_text}}</p>
+            <h2 class="title edit">{{data[0].newAvisTitle}}</h2>
+            {% autoescape 'html' %}
+
+            <div class="text_align_center paragraph_dark edit">{{data[0].newAvisText|raw}}</div>
+            {% endautoescape %}
             <form action="POST">
                 <textarea name="textarea" class="field" id="textarea" rows="15" placeholder="Votre Avis"></textarea>
                 <div class="btn">Envoyer</div>

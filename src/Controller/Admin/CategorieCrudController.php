@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\TextEditorType;
 
 class CategorieCrudController extends AbstractCrudController
 {
@@ -21,6 +23,7 @@ class CategorieCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnIndex()->hideOnForm(),
             TextField::new('name','Nom'),
+            TextEditorField::new('text'),
         ];
     }
     

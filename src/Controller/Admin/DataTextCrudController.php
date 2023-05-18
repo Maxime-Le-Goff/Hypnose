@@ -28,10 +28,12 @@ class DataTextCrudController extends AbstractCrudController
             TextField::new('homeValues'),
             TextField::new('tarifs_title'),
             TextEditorField::new('tarifs_text1'),
-            // TextField::new('tarifs_text2'),
-            // TextField::new('tarifs_text3'),
-            // TextField::new('tarifs_text4'),
-
+            TextField::new('avis_title'),
+            TextEditorField::new('avis_text'),
+            TextField::new('new_avis_title'),
+            TextEditorField::new('new_avis_text'),
+            TextField::new('rdv_title'),
+            TextEditorField::new('rdv_text_un'),
         ];
     }
     
