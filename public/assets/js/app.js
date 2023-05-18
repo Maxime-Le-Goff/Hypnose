@@ -9,8 +9,16 @@ hamburger.addEventListener('click', (event) => {
 
 //Dropdown Menu on click 
 const li = document.querySelector('#dropdown_li');
-console.log(li);
 li.addEventListener('click', (event) => {
     const dropdown = document.querySelector('.dropdown');
     dropdown.classList.toggle('drop_active');
 } )
+
+
+// //Active class on navbar
+// const navItems = document.querySelectorAll('.main_nav');
+// for(item of navItems){
+//     item.addEventListener('click',(e) => {
+//         e.target.classList.add('active');
+//     })
+// }

@@ -99,7 +99,7 @@ li{
   display:none;
 }
 
-.active {
+#active {
   color: var(--titleColor);
 }
 
@@ -566,6 +566,7 @@ strong {
   flex-direction: column;
   align-items: start;
   padding-left:40px;
+  text-align: left;
 }
 
 .list_style_on{
