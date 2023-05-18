@@ -32,9 +32,9 @@
                 <li><a class="main_nav" href="{{path('app_avis')}}">Avis</a></li>
                 <li><a class="main_nav" href="{{path('app_rdv')}}">Rendez-vous</a></li>
                 {% if app.user %}
-                <li><a class="main_nav" href="{{path('app_logout')}}">Se déconnecter</a></li>
+                <li><a class="main_nav" href="{{path('app_logout')}}">Déconnexion</a></li>
                 {% else %}
-                 <li><a class="main_nav" href="{{path('app_login')}}">Se connecter</a></li>
+                 <li><a class="main_nav" href="{{path('app_login')}}">Connexion</a></li>
                 {% endif %}
             </ul>
         </nav>

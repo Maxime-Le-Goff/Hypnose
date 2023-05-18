@@ -29,6 +29,11 @@ class Categorie
      */
     private $skill;
 
+    /**
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $text;
+
     public function __construct()
     {
         $this->skill = new ArrayCollection();
@@ -81,6 +86,18 @@ class Categorie
                 $skill->setCategorie(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(?string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }

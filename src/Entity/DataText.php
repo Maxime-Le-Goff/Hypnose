@@ -45,21 +45,6 @@ class DataText
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $tarifs_text2;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tarifs_text3;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tarifs_text4;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $avisTitle;
 
     /**
@@ -83,19 +68,11 @@ class DataText
     private $rdvTitle;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1000)
      */
     private $rdvTextUn;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $rdvTextDeux;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $rdvTextTrois;
+    
 
 
     public function getId(): ?int
@@ -163,41 +140,6 @@ class DataText
         return $this;
     }
 
-    public function getTarifsText2(): ?string
-    {
-        return $this->tarifs_text2;
-    }
-
-    public function setTarifsText2(string $tarifs_text2): self
-    {
-        $this->tarifs_text2 = $tarifs_text2;
-
-        return $this;
-    }
-
-    public function getTarifsText3(): ?string
-    {
-        return $this->tarifs_text3;
-    }
-
-    public function setTarifsText3(string $tarifs_text3): self
-    {
-        $this->tarifs_text3 = $tarifs_text3;
-
-        return $this;
-    }
-
-    public function getTarifsText4(): ?string
-    {
-        return $this->tarifs_text4;
-    }
-
-    public function setTarifsText4(string $tarifs_text4): self
-    {
-        $this->tarifs_text4 = $tarifs_text4;
-
-        return $this;
-    }
 
     public function getAvisTitle(): ?string
     {
@@ -267,30 +209,6 @@ class DataText
     public function setRdvTextUn(string $rdvTextUn): self
     {
         $this->rdvTextUn = $rdvTextUn;
-
-        return $this;
-    }
-
-    public function getRdvTextDeux(): ?string
-    {
-        return $this->rdvTextDeux;
-    }
-
-    public function setRdvTextDeux(?string $rdvTextDeux): self
-    {
-        $this->rdvTextDeux = $rdvTextDeux;
-
-        return $this;
-    }
-
-    public function getRdvTextTrois(): ?string
-    {
-        return $this->rdvTextTrois;
-    }
-
-    public function setRdvTextTrois(?string $rdvTextTrois): self
-    {
-        $this->rdvTextTrois = $rdvTextTrois;
 
         return $this;
     }

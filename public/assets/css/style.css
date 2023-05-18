@@ -61,14 +61,6 @@ nav li {
   transition:0.5s;
 }
 
-/* .edit {
-  cursor:pointer;
-}
-
-.edit:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-} */
-
 .main_nav:hover{
     color:var(--titleColor);
 }
@@ -198,10 +190,19 @@ p {
 
 .paragraph_dark {
   color: white;
-  font-size: 1em;
   letter-spacing: 0.1em;
   line-height: 40px;
   font-size: 1.1em;
+  text-align: left;
+}
+
+.paragraph_dark li {
+  list-style: disc;
+}
+
+.paragraph_dark ul {
+  display:block;
+  padding-left: 40px;
 }
 
 .value {
@@ -473,8 +474,7 @@ hr {
   text-align:center;
 }
 
-.price {
-  font-weight: bold;
+strong {
   color: var(--titleColor);
 }
 
@@ -534,12 +534,23 @@ hr {
 }
 
 .contact_form {
-  width:50%;
+  width:100%;
+
 }
 
 .rdv {
   display:flex;
   flex-direction: row;
+}
+.margin_bottom {
+  margin-bottom: 2em;
+}
+#med_title{
+  margin-top:0;
+}
+
+.left {
+  width:50%;
 }
 
 .medoucine {
@@ -554,6 +565,7 @@ hr {
   display:flex;
   flex-direction: column;
   align-items: start;
+  padding-left:40px;
 }
 
 .list_style_on{
@@ -647,6 +659,7 @@ hr {
 
   .nav-bar li {
     padding:1em;
+    list-style: none;
   }
 
   .extend {
@@ -686,20 +699,26 @@ hr {
     display:block;
   }
 
-  .medoucine {
+  .left {
     width:100%;
-    margin-top: 5em;
   }
 
-  .contact_form {
+  .medoucine {
+    margin-top: 5em;
     width:100%;
-  }
+  } 
+
 }
 
 @media only screen and (max-width:600px){
 
   .logo {
     width: 450px;
+    
+  }
+
+  .card p {
+    line-height: 1.2;
   }
 }
 
@@ -718,6 +737,6 @@ hr {
   }
 
   .list_style_on {
-    list-style-type: square;
+    list-style-type: disc;
   }
 }

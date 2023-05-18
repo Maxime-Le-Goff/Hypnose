@@ -1,41 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-  <main>
         <div class="container">
-            <h2 class="title up_font edit ">{{data[0].rdvTitle}}</h2>
-            <p class="paragraph_dark edit">{{data[0].rdvTextUn}}</p>
-            <p class="paragraph_dark edit">{{data[0].rdvTextDeux}}</p>
-            <ul class="column_list">
-                <li class="list_style_on paragraph_dark edit">En Présentiel</li>
-                <li class="list_style_on paragraph_dark edit">En visioconférence via Zoom</li>
-            </ul>
-                <p class="paragraph_dark edit">{{data[0].rdvTextTrois}}</p>
-                <ul class="column_list">
-                    <li class="list_style_on paragraph_dark edit">4 avenue du général de gaulle</li>
-                    <li class="list_style_on paragraph_dark edit">6 chemin des guinguettes</li>
-                </ul>
-            <div class="rdv">
-                <div class="contact_form">
-                    <h3 class="title edit">Par Mail</h3>
-                    <div class="right">
-                        <form method="POST" action="form.php" id="-fcontactorm" onsubmit="return validateContactForm()">
-                        <input name="lastname" type="text" class="field" placeholder="Nom" id="firstname">
-                        <input name="firstname" type="text" class="field" placeholder="Prénom" id="lastname">
-                        <input name="email" type="text" class="field" placeholder="Email" id="email">
-                        <textarea name="content" placeholder="Message" class="field" id="content"></textarea>
-                        <p><input class="btn_form" type="submit" value="Envoyer" /></p>
-                        </form>
+            
+                <h2 class="title edit margin_bottom ">{{data[0].rdvTitle}}</h2>
+                <div class="rdv">
+                <div class="paragraph_dark edit left">{{data[0].rdvTextUn|raw}}</div>
+                    <div class="medoucine">
+                        <p class="paragraph_dark edit">Pour prendre rendez-vous via medoucine, il vous suffit de cliquer sur l'image ci-dessous :</p>
+                        <a class="text" href="https://www.medoucine.com" target="_blank"><img src="{{asset('assets/img/Picto-medoucine.png')}}" alt="Medoucine" class="img_medoucine"></a>                        
                     </div>
-                </div>
-                <div class="medoucine">
-                    <h3 class="title edit">Par Medoucine</h3>
-                    <p class="paragraph_dark edit">Pour prendre rendez-vous via medoucine, il vous suffit de cliquer sur l'image ci-dessous :</p>
-                    <a class="text" href="https://www.medoucine.com" target="_blank"><img src="../Picto-medoucine.png" alt="Medoucine" class="img_medoucine"></a>                        
                 </div>
             </div>
         </div>  
-    </main>
-
 
 {% endblock %}
