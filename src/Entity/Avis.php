@@ -23,7 +23,7 @@ class Avis
     private $message;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, inversedBy="avis", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="avis", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;

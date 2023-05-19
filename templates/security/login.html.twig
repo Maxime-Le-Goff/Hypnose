@@ -7,14 +7,9 @@
 
 <form method="post">
     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div class="alert">{{ 'Mot de Passe Incorrecte' }}</div>
     {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
     <label for="inputEmail">Email</label>
@@ -37,10 +32,10 @@
         </div> #}
     
 
-    <button class="" type="submit">
-        Sign in
+    <button class="btn" type="submit">
+        Se connecter
     </button>
-    <p>Vous ne possédez pas de compte, inscrivez-vous<a href="{{path('app_register')}}"> Ici</a></p>
+    <p class="paragraph_dark">Vous ne possédez pas de compte, inscrivez-vous <a href="{{path('app_register')}}"> <strong>Ici</strong></a></p>
 </form>
 </div>
 {% endblock %}
