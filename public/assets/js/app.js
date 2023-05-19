@@ -14,11 +14,3 @@ li.addEventListener('click', (event) => {
     dropdown.classList.toggle('drop_active');
 } )
 
-
-// //Active class on navbar
-// const navItems = document.querySelectorAll('.main_nav');
-// for(item of navItems){
-//     item.addEventListener('click',(e) => {
-//         e.target.classList.add('active');
-//     })
-// }

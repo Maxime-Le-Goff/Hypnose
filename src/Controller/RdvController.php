@@ -25,14 +25,4 @@ class RdvController extends AbstractController
         );
 
     }
-
-    /**
-     * @Route("/contact", name="app_contact")
-     */
-    public function contact(CategorieRepository $categorie)
-    {
-        return $this->render('contact.html.twig',[
-            'categories' => $categorie->findAll(),
-        ]);
-    }
 }   
