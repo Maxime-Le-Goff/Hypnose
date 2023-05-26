@@ -35,4 +35,15 @@ class HomeController extends AbstractController
             'data' => $data->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/chartes",  name ="app_mentions")
+     */
+    public function chartes(CategorieRepository $categories, DataTextRepository $data)
+    {
+        return $this->render('mentions.html.twig', [
+            'categories' => $categories->findAll(),
+            'data' => $data->findAll(),
+        ]);
+    }
 }
