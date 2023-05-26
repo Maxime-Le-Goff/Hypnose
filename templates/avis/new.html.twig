@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Donnez votre Avis{% endblock %}
+{% block body %}
+        <div class="container">
+            <h2 class="title edit">{{data[0].newAvisTitle}}</h2>
+            <div class="text_align_center paragraph_dark edit">{{data[0].newAvisText|raw}}</div>
+                {{ form_start(form) }}
+                {{ form_row(form.message) }}
+                    <button type="submit" class="btn">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+{% endblock %}

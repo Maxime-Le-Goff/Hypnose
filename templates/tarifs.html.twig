@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tarifs{% endblock %}
+{% block body %}
+    <main>
+        <div class="container">
+            <h2 class="title margin_title edit">Tarifs</h2>
+            <div class="paragraph_dark edit">{{data[0].TarifsText1|raw}}</div>
+        </div>
+    </main>
+{% endblock %}

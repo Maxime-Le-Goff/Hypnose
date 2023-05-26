@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Prendre Rendez-vous{% endblock %}
+
+{% block body %}
+        <div class="container">
+            
+                <h2 class="title edit margin_bottom ">{{data[0].rdvTitle}}</h2>
+                <div class="rdv">
+                <div class="paragraph_dark edit left">{{data[0].rdvTextUn|raw}}</div>
+                    <div class="medoucine">
+                        <p class="paragraph_dark edit">Pour prendre rendez-vous via medoucine, il vous suffit de cliquer <a class="span" href="https://www.medoucine.com/consultation/l-hay-les-roses/francoise-valette/6085" target="_blank"><strong>ici</strong></a></p>
+                        <img src="{{asset('assets/img/label-medoucine.png')}}" alt="Logo Medoucine" class="img_medoucine">                  
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+{% endblock %}
