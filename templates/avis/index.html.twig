@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Avis{% endblock %}
 {% block body %}
 <main>
         <div class="container">
@@ -12,7 +12,7 @@
             <a href="{{path('app_login')}}" class="btn" >Donner votre avis</a>
             {% endif %}
             <ul class="list_avis">
-            {% for avis in allAvis %}
+            {% for avis in allAvis|sort|reverse %}
             {% if avis.isValid %}
                 <li class="one_avis">
                     <p>{{avis.message}}</p>
