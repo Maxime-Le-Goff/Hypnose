@@ -499,6 +499,36 @@ hr {
   text-align:center;
 }
 
+.flex_footer {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width:70%;
+  margin: auto;
+}
+
+.flex_footer nav {
+  width:50%;
+}
+
+.footer_nav {
+  display:flex;
+  flex-direction:column;
+  line-height: 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_logo {
+  display:flex;
+  width:50%;
+}
+
+.footer_logo img {
+  max-width:15%;
+  margin:1em;
+}
+
 strong {
   color: var(--titleColor);
 }
@@ -744,6 +774,10 @@ hr {
 
   .card p {
     line-height: 1.2;
+  }
+  
+  .flex_footer {
+    width:100%;
   }
 }
 

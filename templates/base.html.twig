@@ -2,8 +2,10 @@
 <html lang='fr'>
     <head>
         <meta charset="UTF-8">
+        <title>{% block title %}Françoise Valette, Hypnose{% endblock %}</title>
+        <meta name="description" content="Découvrez les bienfaits de l'hypnose pour améliorer votre bien-être. Je propose des séances personnalisées pour vous aider à surmonter vos défis et atteindre vos objectifs. Prenez rendez-vous dès maintenant.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="icon" href="{{asset('assets/img/Logo final_no_bg.png')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <script src="{{asset('assets/js/app.js')}}" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,17 +50,23 @@
     {% block body %}{% endblock %}
     <hr>
     <footer>
+    <div class="flex_footer">
         <nav> 
-            <ul>
+            <ul class="footer_nav">
             {% if app.user %}
                 <li><a class="main_nav" href="{{path('app_new_avis')}}">Laissez un avis</a></li>
             {% else %}
                 <li><a class="main_nav" href="{{path('app_login')}}">Laissez un avis</a></li>
             {% endif %}
-                <li><a class="main_nav" href="{{path('app_new_avis')}}">Mentions légales</a></li>
+                <li><a class="main_nav" href="{{path('app_mentions')}}">Mentions légales</a></li>
                 <li><a class="main_nav" href="{{path('app_contact')}}">Contact</a></li>
             </ul>
         </nav>
+        <div class="footer_logo">
+            <img src="{{asset('assets/img/web_directoy_logo.png')}}" alt="logo SNH ">
+            <img src="{{asset('assets/img/label-medoucine.png')}}" alt="logo Medoucine ">
+        </div>
+    </div>
     </footer>
 </body>
 </html>

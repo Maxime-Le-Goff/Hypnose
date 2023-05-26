@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Contact{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -9,7 +9,7 @@
                 {{ message }}
             </div>
         {% endfor %}
-    <p class="paragraph_dark margin_bottom">Si vous avez une question ou souhaitez avoir des précisions dans un domaine particulier, n'hésitez pas à me  contacter via le formulaire ci-dessous </p>
+    <p class="paragraph_dark margin_bottom">Si vous avez une question ou souhaitez avoir des précisions dans un domaine particulier, n'hésitez pas à me  contacter</p>
         {{ form_start(form) }}
         {{ form_row(form.nom) }}
         {{ form_row(form.prenom) }}
