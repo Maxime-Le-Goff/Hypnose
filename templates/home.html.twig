@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Françoise Valette, Hypnose</title>
+        <meta name="description" content="Découvrez les bienfaits de l'hypnose pour améliorer votre bien-être. Je propose des séances personnalisées pour vous aider à surmonter vos défis et atteindre vos objectifs. Prenez rendez-vous dès maintenant.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{asset('assets/img/Logo final_no_bg.png')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <script src="{{asset('assets/js/app.js')}}" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8d63125858.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <header class="home_header">
+            <div class="hamburger">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                {% set currentPath = app.request.attributes.get('_route') %}
+                <li><a class="main_nav" {% if currentPath == 'app_home'  %} id="active"{% endif %} href="{{path('app_home')}}">Accueil</a></li>
+                <li id="dropdown_li"><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                {% for categorie in categories %}
+                    <li><a href="{{path('app_skill', {id : categorie.id})}}">{{categorie.name}}</a></li>
+                {% endfor %}
+                </ul></li>
+                <li><a class="main_nav" href="{{path('app_tarifs')}}">Tarifs</a></li>
+                <li><a class="main_nav" href="{{path('app_avis')}}">Avis</a></li>
+                <li><a class="main_nav" href="{{path('app_rdv')}}">Rendez-vous</a></li>
+                {% if app.user %}
+                <li><a class="main_nav" href="{{path('app_logout')}}">Déconnexion</a></li>
+                {% else %}
+                 <li><a class="main_nav"href="{{path('app_login')}}">Connexion</a></li>
+                {% endif %}
+                {% if app.user %}
+                {% if "ROLE_ADMIN" in app.user.roles %}
+                <li><a class="main_nav"href="{{path('admin')}}">Back-Office</a></li>
+                {% endif %}
+                {% endif %}
+
+            </ul>
+            </nav>
+        </header>
+{% block body %}
+     <main class="main_home">
+        <div class="title_home">
+            <img  class="logo" src="{{asset('assets/img/Logo final_no_bg.png')}}" alt="Logo du Site">
+        </div>
+        <hr>
+        <div class="container">
+            <h2 class="title dark margin edit">{{data[0].homePres}}</h2>
+            
+            <div class="paragraph_dark edit">{{data[0].textPres|raw}}</div>
+            
+            <h3 class ="title dark margin edit" >{{data[0].homeValues}}</h3>
+            <div class="values">
+                <article class="card">
+                    <img
+                    class="card__background"
+                    src="{{asset('assets/img/Logo final.jpg')}}" alt="Logo avec une couleur plus claire"
+                    alt=""
+                     width="1920" 
+                     height="2193" >
+                    
+                    <div class="card__content | flow">
+                    <div class="card__content--container | flow">
+                        <h2 class="card__title">Respect</h2>
+                        <p class="card__description">
+                            Chacun avec son expérience est différent. Respecter votre unicité est un engagement formel de ma part. Mon rôle consiste à vous permettre d’être à l’aise avec vous-même, au passé, au présent et au futur. 
+                        </p>
+                    </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <img
+                    class="card__background"
+                    src="{{asset('assets/img/darklogo.png')}}" alt="Logo avec une couleur plus sombre"
+                    alt=""
+                    width="1920"
+                    height="2193"
+                    />
+                    <div class="card__content | flow">
+                    <div class="card__content--container | flow">
+                        <h2 class="card__title"> Bienveillance</h2>
+                        <p class="card__description">
+                            Vous détenez (et conserverez) les clés de vos changements, parce qu’au fond de vous, vous savez ce qu’il vous faut, sans en avoir conscience. Mon rôle consiste à vous accompagner dans cette exploration de vous-même, sans le moindre jugement.
+                        </p>
+                    </div>
+                    </div>
+                </article>
+            
+                <article class="card">
+                    <img
+                    class="card__background"
+                    src="{{asset('assets/img/lightlogo.png')}}" alt="Logo avec une couleur similaire au logo de base"
+                    alt=""
+                    width="1920"
+                    height="2193"
+                    />
+                    <div class="card__content | flow">
+                    <div class="card__content--container | flow">
+                        <h2 class="card__title">Autonomie</h2>
+                        <p class="card__description">
+                            L’objectif de nos séances sera aussi de vous rendre autonome. Plus vous êtes en lien avec vous-même, plus vos décisions, vos projets, vos choix seront facilités, vous ressembleront et vous enchanteront
+                        </p>
+                    </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+    <hr>
+    <footer>
+        <div class="flex_footer">
+        <nav> 
+            <ul class="footer_nav">
+            {% if app.user %}
+                <li><a class="main_nav" href="{{path('app_new_avis')}}">Laissez un avis</a></li>
+            {% else %}
+                <li><a class="main_nav" href="{{path('app_login')}}">Laissez un avis</a></li>
+            {% endif %}
+                <li><a class="main_nav" href="{{path('app_mentions')}}">Mentions légales</a></li>
+                <li><a class="main_nav" href="{{path('app_contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="footer_logo">
+            <img src="{{asset('assets/img/web_directoy_logo.png')}}" alt="logo SNH ">
+            <img src="{{asset('assets/img/label-medoucine.png')}}" alt="logo Medoucine ">
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
+        
+    </body>
+</html>
