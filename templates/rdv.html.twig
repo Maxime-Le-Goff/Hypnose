@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}Prendre Rendez-vous{% endblock %}
-
+{% block meta_description %}"Réservez votre séance d'hypnothérapie dès maintenant - Prenez le contrôle de votre bien-être en planifiant votre séance d'hypnose avec notre praticienne qualifiée. Choisissez parmi nos horaires flexibles et réservez en ligne en quelques clics. Profitez d'un espace sécurisé et confidentiel pour explorer votre potentiel intérieur et vivre une expérience de changement profond. Réservez votre rendez-vous dès aujourd'hui."{% endblock %}
 {% block body %}
         <div class="container">
             
@@ -9,7 +9,7 @@
                 <div class="paragraph_dark edit left">{{data[0].rdvTextUn|raw}}</div>
                     <div class="medoucine">
                         <p class="paragraph_dark edit">Pour prendre rendez-vous via medoucine, il vous suffit de cliquer <a class="span" href="https://www.medoucine.com/consultation/l-hay-les-roses/francoise-valette/6085" target="_blank"><strong>ici</strong></a></p>
-                        <img src="{{asset('assets/img/label-medoucine.png')}}" alt="Logo Medoucine" class="img_medoucine">                  
+                        <img src="{{asset('assets/img/label-medoucine.png')}}" alt="Praticien recommandé par Médoucine" class="img_medoucine">                  
                     </div>
                 </div>
             </div>

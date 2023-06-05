@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SkillController extends AbstractController
 {
     /**
-     * @Route("/compétences/{id}", name="app_skill")
+     * @Route("/competences/{id}", name="app_skill")
      */
     public function index(CategorieRepository $categorie, SkillRepository $skill, int $id ): Response
     {
