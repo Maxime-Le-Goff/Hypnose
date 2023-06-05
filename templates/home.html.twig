@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Françoise Valette, Hypnose</title>
-        <meta name="description" content="Découvrez les bienfaits de l'hypnose pour améliorer votre bien-être. Je propose des séances personnalisées pour vous aider à surmonter vos défis et atteindre vos objectifs. Prenez rendez-vous dès maintenant.">
+        <meta name="description" content="Libérez votre potentiel avec l'hypnose - Expérimentez la transformation profonde de votre esprit et trouvez l'équilibre intérieur avec notre praticienne en hypnose certifiée. Découvrez comment l'hypnothérapie peut vous aider à surmonter les blocages, à gérer le stress et à atteindre vos objectifs personnels. Réservez une séance dès maintenant pour vivre une expérience positive et libératrice.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="{{asset('assets/img/Logo final_no_bg.png')}}">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -23,7 +23,10 @@
             <nav class="nav-bar">
                 <ul>
                 {% set currentPath = app.request.attributes.get('_route') %}
-                <li><a class="main_nav" {% if currentPath == 'app_home'  %} id="active"{% endif %} href="{{path('app_home')}}">Accueil</a></li>
+                <div>
+                <li id="left_nav"><a class="main_nav" {% if currentPath == 'app_home'  %} id="active"{% endif %} href="{{path('app_home')}}"><h1 class="main_nav">Françoise Valette</h1></a></li>
+                </div>
+                <div>
                 <li id="dropdown_li"><a class="main_nav drop" href="#">Compétences <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown">
                 {% for categorie in categories %}
@@ -33,17 +36,20 @@
                 <li><a class="main_nav" href="{{path('app_tarifs')}}">Tarifs</a></li>
                 <li><a class="main_nav" href="{{path('app_avis')}}">Avis</a></li>
                 <li><a class="main_nav" href="{{path('app_rdv')}}">Rendez-vous</a></li>
+                </div>
+                <div>
                 {% if app.user %}
                 <li><a class="main_nav" href="{{path('app_logout')}}">Déconnexion</a></li>
                 {% else %}
                  <li><a class="main_nav"href="{{path('app_login')}}">Connexion</a></li>
                 {% endif %}
+                
                 {% if app.user %}
                 {% if "ROLE_ADMIN" in app.user.roles %}
                 <li><a class="main_nav"href="{{path('admin')}}">Back-Office</a></li>
                 {% endif %}
                 {% endif %}
-
+            </div>
             </ul>
             </nav>
         </header>
@@ -63,7 +69,7 @@
                 <article class="card">
                     <img
                     class="card__background"
-                    src="{{asset('assets/img/Logo final.jpg')}}" alt="Logo avec une couleur plus claire"
+                    src="{{asset('assets/img/Logo final.jpg')}}" alt="Françoise Valette, Praticienne en Hypnose"
                     alt=""
                      width="1920" 
                      height="2193" >
@@ -80,7 +86,7 @@
                 <article class="card">
                     <img
                     class="card__background"
-                    src="{{asset('assets/img/darklogo.png')}}" alt="Logo avec une couleur plus sombre"
+                    src="{{asset('assets/img/darklogo.png')}}" alt="Françoise Valette, Praticienne en Hypnose"
                     alt=""
                     width="1920"
                     height="2193"
@@ -98,7 +104,7 @@
                 <article class="card">
                     <img
                     class="card__background"
-                    src="{{asset('assets/img/lightlogo.png')}}" alt="Logo avec une couleur similaire au logo de base"
+                    src="{{asset('assets/img/lightlogo.png')}}" alt="Françoise Valette, Praticienne en Hypnose"
                     alt=""
                     width="1920"
                     height="2193"
@@ -133,8 +139,8 @@
             </ul>
         </nav>
         <div class="footer_logo">
-            <img src="{{asset('assets/img/noirlogosnh.png')}}" alt="logo SNH ">
-            <img src="{{asset('assets/img/label-medoucine.png')}}" alt="logo Medoucine ">
+            <img src="{{asset('assets/img/noirlogosnh.png')}}" alt="Syndicat National des Hypnothérapeutes ">
+            <img src="{{asset('assets/img/label-medoucine.png')}}" alt="Praticien recommandé par Médoucine">
         </div>
     </div>
     </footer>
