@@ -103,7 +103,7 @@ li{
 }
 
 .logo {
-  width:900px;
+  width:90%;
 }
 
 footer {
@@ -723,7 +723,7 @@ strong {
   }
  
   .nav-bar li {
-    padding:0.5em;
+    padding:1.5em;
     margin:0;
     list-style: none;
   }
@@ -733,7 +733,7 @@ strong {
   }
 
   .extend {
-    height:370px;
+    height:100vh;
     opacity:1;
     background-color: #0B0B45;
     display: block;
